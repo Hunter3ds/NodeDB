@@ -17,6 +17,12 @@ db.connect((err) => {
     console.log('Conectado ao banco de dados MySQL');
 });
 
+let sql = 'CREATE DATABASE clientes2';
+db.query(sql, function(err){
+    if(err) throw err;
+    console.log('Database Created');
+})
+
 // Middlewares
 app.use(cors());
 app.use(express.json()); // No ES6, não é necessário body-parser
